@@ -22,7 +22,7 @@ FROM grafana/grafana:latest
 USER root
 
 # Install ca-certificates and curl for downloading supercronic
-RUN apk add --no-cache ca-certificates curl
+RUN apk add --no-cache ca-certificates curl sqlite
 
 # Install supercronic (cron replacement designed for containers)
 ARG SUPERCRONIC_VERSION=v0.2.43

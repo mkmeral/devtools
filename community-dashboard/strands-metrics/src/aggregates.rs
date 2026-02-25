@@ -1,5 +1,5 @@
 use anyhow::Result;
-use chrono::{DateTime, Duration, NaiveDate, TimeZone, Utc};
+use chrono::{Duration, NaiveDate, NaiveTime, Utc};
 use rusqlite::{params, Connection};
 
 pub fn compute_metrics(conn: &Connection) -> Result<()> {
@@ -10,11 +10,17 @@ pub fn compute_metrics(conn: &Connection) -> Result<()> {
 
     let start_date = match last_metric_date {
         Some(d) => NaiveDate::parse_from_str(&d, "%Y-%m-%d")
-            .map(|nd| Utc.from_utc_datetime(&nd.and_hms_opt(0, 0, 0).unwrap()) - Duration::days(3))
+            .map(|nd| {
+                nd.and_time(NaiveTime::MIN)
+                    .and_utc()
+                    .checked_sub_signed(Duration::days(3))
+                    .unwrap()
+            })
             .unwrap_or_else(|_| Utc::now()),
-        None => DateTime::parse_from_rfc3339("2010-01-01T00:00:00Z")
+        None => NaiveDate::from_ymd_opt(2025, 5, 1)
             .unwrap()
-            .with_timezone(&Utc),
+            .and_time(NaiveTime::MIN)
+            .and_utc(),
     };
 
     let start_date_str = start_date.format("%Y-%m-%d").to_string();
@@ -56,8 +62,9 @@ pub fn compute_metrics(conn: &Connection) -> Result<()> {
     let now = Utc::now();
     let num_days = (now - start_date).num_days();
 
+    // Iterate newest-first so dashboards show current data ASAP
     for i in 0..=num_days {
-        let date = start_date + Duration::days(i);
+        let date = now - Duration::days(i);
         let date_str = date.format("%Y-%m-%d").to_string();
 
         conn.execute(

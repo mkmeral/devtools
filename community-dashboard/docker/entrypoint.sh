@@ -48,6 +48,18 @@ echo "[entrypoint] Syncing package downloads..."
 strands-metrics --db-path "$DB_PATH" sync-downloads --config-path "$CONFIG_DIR/packages.yaml" || \
     echo "[entrypoint] WARNING: Failed to sync downloads."
 
+# ── One-time metrics recompute (set RECOMPUTE_METRICS=true to trigger) ───────
+if [ "${RECOMPUTE_METRICS:-false}" = "true" ]; then
+    echo "[entrypoint] RECOMPUTE_METRICS=true — wiping daily_metrics for full recalculation..."
+    sqlite3 "$DB_PATH" "DELETE FROM daily_metrics;"
+    echo "[entrypoint] daily_metrics cleared. Next sync will rebuild all aggregates."
+    if [ -n "$GITHUB_TOKEN" ]; then
+        echo "[entrypoint] Running sync + full recompute now..."
+        strands-metrics --db-path "$DB_PATH" sync || \
+            echo "[entrypoint] WARNING: Recompute sync failed (will retry on next cron run)."
+    fi
+fi
+
 # ── Cron schedule ───────────────────────────────────────────────────────────
 # Sync daily at 06:00 UTC. Output is forwarded to container stdout/stderr
 # via /proc/1/fd/1 so it shows up in docker logs / CloudWatch.
