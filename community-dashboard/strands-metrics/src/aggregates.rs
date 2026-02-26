@@ -213,6 +213,36 @@ pub fn compute_metrics(conn: &Connection) -> Result<()> {
               WHERE date = ?1",
              params![date_str],
         )?;
+
+        // Weekly community contributors (distinct external PR authors in 7-day window)
+        conn.execute(
+            "UPDATE daily_metrics
+             SET weekly_community_contributors = (
+                 SELECT COUNT(DISTINCT author)
+                 FROM pull_requests
+                 WHERE repo = daily_metrics.repo
+                   AND json_extract(data, '$.author_association') NOT IN ('OWNER', 'MEMBER', 'COLLABORATOR')
+                   AND date(created_at) > date(daily_metrics.date, '-7 days')
+                   AND date(created_at) <= date(daily_metrics.date)
+             )
+             WHERE date = ?1",
+            params![date_str],
+        )?;
+
+        // Cumulative community contributors (running total of first-time external authors)
+        conn.execute(
+            "UPDATE daily_metrics
+             SET cumulative_community_contributors = (
+                 SELECT COUNT(DISTINCT author)
+                 FROM pull_requests
+                 WHERE json_extract(data, '$.author_association') NOT IN ('OWNER', 'MEMBER', 'COLLABORATOR')
+                   AND author NOT LIKE '%[bot]%'
+                   AND author NOT IN ('strands-agent', 'dependabot')
+                   AND date(created_at) <= date(daily_metrics.date)
+             )
+             WHERE date = ?1",
+            params![date_str],
+        )?;
     }
 
     // Cleanup temp table

@@ -153,6 +153,9 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
             time_to_merge_internal REAL DEFAULT 0,
             time_to_merge_external REAL DEFAULT 0,
 
+            weekly_community_contributors INTEGER DEFAULT 0,
+            cumulative_community_contributors INTEGER DEFAULT 0,
+
             PRIMARY KEY (date, repo)
         )",
         [],
@@ -205,6 +208,17 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
         "CREATE INDEX IF NOT EXISTS idx_downloads_package_date ON package_downloads(package, date)",
         [],
     )?;
+
+    // ── Migrations for existing databases ──────────────────────────────
+    // ALTER TABLE is idempotent-safe: we ignore "duplicate column" errors.
+    let _ = conn.execute(
+        "ALTER TABLE daily_metrics ADD COLUMN weekly_community_contributors INTEGER DEFAULT 0",
+        [],
+    );
+    let _ = conn.execute(
+        "ALTER TABLE daily_metrics ADD COLUMN cumulative_community_contributors INTEGER DEFAULT 0",
+        [],
+    );
 
     Ok(conn)
 }
