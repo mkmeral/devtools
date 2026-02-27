@@ -566,7 +566,7 @@
         "x": 0,
         "y": 59,
         "h": 4,
-        "w": 6
+        "w": 4
       },
       "fieldConfig": {
         "defaults": {
@@ -627,10 +627,10 @@
       "title": "Sev2 Open",
       "description": "Open issues with Sev2 priority.",
       "gridPos": {
-        "x": 6,
+        "x": 4,
         "y": 59,
         "h": 4,
-        "w": 6
+        "w": 4
       },
       "fieldConfig": {
         "defaults": {
@@ -691,10 +691,10 @@
       "title": "On-Call Open",
       "description": "Open issues with On-Call priority.",
       "gridPos": {
-        "x": 12,
+        "x": 8,
         "y": 59,
         "h": 4,
-        "w": 6
+        "w": 4
       },
       "fieldConfig": {
         "defaults": {
@@ -755,10 +755,10 @@
       "title": "High Open",
       "description": "Open issues with High priority.",
       "gridPos": {
-        "x": 18,
+        "x": 12,
         "y": 59,
         "h": 4,
-        "w": 6
+        "w": 4
       },
       "fieldConfig": {
         "defaults": {
@@ -955,7 +955,7 @@
       "title": "Responsiveness",
       "gridPos": {
         "x": 0,
-        "y": 69,
+        "y": 85,
         "h": 1,
         "w": 24
       },
@@ -969,7 +969,7 @@
       "description": "Open issues from non-maintainers where the last comment is not from a team member.",
       "gridPos": {
         "x": 0,
-        "y": 70,
+        "y": 86,
         "h": 4,
         "w": 12
       },
@@ -1033,7 +1033,7 @@
       "description": "Open PRs that have received zero reviews.",
       "gridPos": {
         "x": 12,
-        "y": 70,
+        "y": 86,
         "h": 4,
         "w": 12
       },
@@ -1097,7 +1097,7 @@
       "description": "Open issues awaiting maintainer response, by repository.",
       "gridPos": {
         "x": 0,
-        "y": 74,
+        "y": 90,
         "h": 6,
         "w": 12
       },
@@ -1165,7 +1165,7 @@
       "description": "Open PRs with no reviews, by repository.",
       "gridPos": {
         "x": 12,
-        "y": 74,
+        "y": 90,
         "h": 6,
         "w": 12
       },
@@ -1232,7 +1232,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 96
       },
       "id": 101,
       "panels": [],
@@ -1245,7 +1245,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 113
       },
       "id": 102,
       "panels": [],
@@ -1258,7 +1258,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 114
+        "y": 130
       },
       "id": 103,
       "panels": [],
@@ -2157,7 +2157,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 115
+        "y": 131
       },
       "id": 12,
       "options": {
@@ -3089,7 +3089,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 115
+        "y": 131
       },
       "id": 10,
       "options": {
@@ -3359,7 +3359,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 123
+        "y": 139
       },
       "id": 18,
       "options": {
@@ -4305,7 +4305,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 123
+        "y": 139
       },
       "id": 9,
       "options": {
@@ -4573,7 +4573,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 89
+        "y": 105
       },
       "id": 19,
       "options": {
@@ -4857,7 +4857,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 98
+        "y": 114
       },
       "id": 13,
       "options": {
@@ -5152,7 +5152,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 106
+        "y": 122
       },
       "id": 14,
       "options": {
@@ -5428,7 +5428,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 98
+        "y": 114
       },
       "id": 15,
       "options": {
@@ -5723,7 +5723,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 106
+        "y": 122
       },
       "id": 16,
       "options": {
@@ -6658,7 +6658,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 89
+        "y": 105
       },
       "id": 7,
       "options": {
@@ -7128,7 +7128,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 81
+        "y": 97
       },
       "id": 17,
       "options": {
@@ -7596,7 +7596,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 81
+        "y": 97
       },
       "id": 20,
       "options": {
@@ -7669,7 +7669,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 131
+        "y": 147
       },
       "id": 104,
       "panels": [],
@@ -7768,7 +7768,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 132
+        "y": 148
       },
       "id": 21,
       "options": {
@@ -7881,7 +7881,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 132
+        "y": 148
       },
       "id": 22,
       "options": {
@@ -8019,7 +8019,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 140
+        "y": 156
       },
       "id": 23,
       "options": {
@@ -8104,7 +8104,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 140
+        "y": 156
       },
       "id": 24,
       "options": {
@@ -8206,7 +8206,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 150
+        "y": 166
       },
       "id": 25,
       "options": {
@@ -9533,911 +9533,26 @@
       "type": "timeseries"
     },
     {
+      "id": 330,
+      "type": "stat",
+      "title": "Avg Time to Triage",
+      "description": "Average hours from issue creation to triage (priority assigned).",
+      "gridPos": {
+        "x": 16,
+        "y": 59,
+        "w": 4,
+        "h": 4
+      },
       "datasource": {
         "type": "frser-sqlite-datasource",
         "uid": "P2289B60D79A89B0C"
       },
-      "description": "Weekly PRs opened per repository, stacked.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 64
-      },
-      "id": 314,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
-          "queryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(prs_opened) as value\nFROM daily_metrics \nWHERE repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "queryText": "SELECT ROUND(AVG((julianday(pi.triaged_at) - julianday(i.created_at)) * 24), 1) as value\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\nAND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')",
           "queryType": "table",
-          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(prs_opened) as value\nFROM daily_metrics \nWHERE repo IN (${repo:singlequote}) \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "rawQueryText": "SELECT ROUND(AVG((julianday(pi.triaged_at) - julianday(i.created_at)) * 24), 1) as value\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\nAND i.repo IN (${repo:singlequote})",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -10445,23 +9560,138 @@
           ]
         }
       ],
-      "title": "PRs Opened by Repo (Weekly)",
-      "type": "timeseries",
-      "transformations": [
-        {
-          "id": "prepareTimeSeries",
-          "options": {
-            "format": "multi"
+      "fieldConfig": {
+        "defaults": {
+          "unit": "h",
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 24
+              },
+              {
+                "color": "red",
+                "value": 72
+              }
+            ]
           }
-        }
-      ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      }
     },
     {
+      "id": 331,
+      "type": "stat",
+      "title": "P90 Time to Triage",
+      "description": "90th percentile hours from issue creation to triage. Excludes items where triaged_at == created_at (fallback timestamps).",
+      "gridPos": {
+        "x": 20,
+        "y": 59,
+        "w": 4,
+        "h": 4
+      },
       "datasource": {
         "type": "frser-sqlite-datasource",
         "uid": "P2289B60D79A89B0C"
       },
-      "description": "Weekly PRs merged + rejected per repository, stacked.",
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT ROUND(hours, 1) as value FROM (\n  SELECT (julianday(pi.triaged_at) - julianday(i.created_at)) * 24 as hours\n  FROM project_items pi\n  JOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\n  WHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n  AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n  AND pi.triaged_at != i.created_at\n  ORDER BY hours ASC\n  LIMIT 1\n  OFFSET (SELECT CAST(COUNT(*) * 0.9 AS INTEGER)\n          FROM project_items pi2\n          JOIN issues i2 ON pi2.repo = i2.repo AND pi2.issue_number = i2.number\n          WHERE pi2.triaged_at IS NOT NULL AND pi2.priority IS NOT NULL\n          AND i2.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n          AND pi2.triaged_at != i2.created_at)\n)",
+          "queryType": "table",
+          "rawQueryText": "SELECT ROUND(hours, 1) as value FROM (\n  SELECT (julianday(pi.triaged_at) - julianday(i.created_at)) * 24 as hours\n  FROM project_items pi\n  JOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\n  WHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n  AND i.repo IN (${repo:singlequote})\n  AND pi.triaged_at != i.created_at\n  ORDER BY hours ASC\n  LIMIT 1\n  OFFSET (SELECT CAST(COUNT(*) * 0.9 AS INTEGER)\n          FROM project_items pi2\n          JOIN issues i2 ON pi2.repo = i2.repo AND pi2.issue_number = i2.number\n          WHERE pi2.triaged_at IS NOT NULL AND pi2.priority IS NOT NULL\n          AND i2.repo IN (${repo:singlequote})\n          AND pi2.triaged_at != i2.created_at)\n)",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "h",
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 48
+              },
+              {
+                "color": "red",
+                "value": 168
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      }
+    },
+    {
+      "id": 332,
+      "type": "timeseries",
+      "title": "Triage Velocity (Weekly)",
+      "description": "Issues added to project and triaged per week with net delta.",
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      },
+      "pluginVersion": "12.3.1",
+      "gridPos": {
+        "x": 0,
+        "y": 69,
+        "w": 24,
+        "h": 8
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -10475,8 +9705,8 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
+            "drawStyle": "bars",
+            "fillOpacity": 30,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -10485,7 +9715,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "linear",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -10515,13 +9745,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python"
+              "options": "Added"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "light-blue",
                   "mode": "fixed"
                 }
               }
@@ -10530,13 +9760,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (Internal)"
+              "options": "Triaged"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "semi-dark-green",
                   "mode": "fixed"
                 }
               }
@@ -10545,807 +9775,50 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (External)"
+              "options": "Delta"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "white",
                   "mode": "fixed"
                 }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python (First Response)"
-            },
-            "properties": [
+              },
               {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-python (Resolution Time)"
-            },
-            "properties": [
+                "id": "custom.drawStyle",
+                "value": "line"
+              },
               {
-                "id": "color",
-                "value": {
-                  "fixedColor": "blue",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript"
-            },
-            "properties": [
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
               {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (Internal)"
-            },
-            "properties": [
+                "id": "custom.lineWidth",
+                "value": 2
+              },
               {
-                "id": "color",
+                "id": "custom.lineStyle",
                 "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
+                  "fill": "dash",
+                  "dash": [
+                    10,
+                    5
+                  ]
                 }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (External)"
-            },
-            "properties": [
+              },
               {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (First Response)"
-            },
-            "properties": [
+                "id": "custom.showPoints",
+                "value": "always"
+              },
               {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
+                "id": "custom.pointSize",
+                "value": 6
               }
             ]
           }
         ]
       },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 72
-      },
-      "id": 315,
       "options": {
         "legend": {
           "calcs": [],
@@ -11354,14 +9827,14 @@
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "desc"
+          "sort": "none"
         }
       },
       "targets": [
         {
-          "queryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(prs_merged) as value\nFROM daily_metrics \nWHERE repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "queryText": "SELECT \n  CAST(strftime('%s', date(i.created_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  COUNT(*) as \"Added\"\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n  AND CAST(strftime('%s', i.created_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', i.created_at) as INTEGER) <= $__to / 1000\nGROUP BY date(i.created_at, 'weekday 0', '-6 days')\nORDER BY time ASC",
           "queryType": "table",
-          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(prs_merged) as value\nFROM daily_metrics \nWHERE repo IN (${repo:singlequote}) \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(i.created_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  COUNT(*) as \"Added\"\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE i.repo IN (${repo:singlequote})\n  AND CAST(strftime('%s', i.created_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', i.created_at) as INTEGER) <= $__to / 1000\nGROUP BY date(i.created_at, 'weekday 0', '-6 days')\nORDER BY time ASC",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -11369,33 +9842,43 @@
           ]
         },
         {
-          "queryText": "SELECT \n  CAST(strftime('%s', date(date(closed_at), 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  COUNT(*) as value\nFROM pull_requests\nWHERE state = 'closed' \n  AND merged_at IS NULL \n  AND repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') \n  AND CAST(strftime('%s', date(closed_at)) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date(closed_at)) as INTEGER) <= $__to / 1000\nGROUP BY date(date(closed_at), 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "queryText": "SELECT \n  CAST(strftime('%s', date(pi.triaged_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  COUNT(*) as \"Triaged\"\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n  AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) <= $__to / 1000\nGROUP BY date(pi.triaged_at, 'weekday 0', '-6 days')\nORDER BY time ASC",
           "queryType": "table",
-          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(date(closed_at), 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  COUNT(*) as value\nFROM pull_requests\nWHERE state = 'closed' \n  AND merged_at IS NULL \n  AND repo IN (${repo:singlequote}) \n  AND CAST(strftime('%s', date(closed_at)) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date(closed_at)) as INTEGER) <= $__to / 1000\nGROUP BY date(date(closed_at), 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(pi.triaged_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  COUNT(*) as \"Triaged\"\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n  AND i.repo IN (${repo:singlequote})\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) <= $__to / 1000\nGROUP BY date(pi.triaged_at, 'weekday 0', '-6 days')\nORDER BY time ASC",
           "refId": "B",
           "timeColumns": [
             "time",
             "ts"
           ]
-        }
-      ],
-      "title": "PRs Closed by Repo (Weekly)",
-      "type": "timeseries",
-      "transformations": [
+        },
         {
-          "id": "prepareTimeSeries",
-          "options": {
-            "format": "multi"
-          }
+          "queryText": "SELECT \n  a.time,\n  a.added - COALESCE(t.triaged, 0) as \"Delta\"\nFROM (\n  SELECT CAST(strftime('%s', date(i.created_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n         COUNT(*) as added\n  FROM project_items pi\n  JOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\n  WHERE i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n    AND CAST(strftime('%s', i.created_at) as INTEGER) >= $__from / 1000\n    AND CAST(strftime('%s', i.created_at) as INTEGER) <= $__to / 1000\n  GROUP BY date(i.created_at, 'weekday 0', '-6 days')\n) a\nLEFT JOIN (\n  SELECT CAST(strftime('%s', date(pi.triaged_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n         COUNT(*) as triaged\n  FROM project_items pi\n  JOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\n  WHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n    AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n    AND CAST(strftime('%s', pi.triaged_at) as INTEGER) >= $__from / 1000\n    AND CAST(strftime('%s', pi.triaged_at) as INTEGER) <= $__to / 1000\n  GROUP BY date(pi.triaged_at, 'weekday 0', '-6 days')\n) t ON a.time = t.time\nORDER BY a.time ASC",
+          "queryType": "table",
+          "rawQueryText": "SELECT \n  a.time,\n  a.added - COALESCE(t.triaged, 0) as \"Delta\"\nFROM (\n  SELECT CAST(strftime('%s', date(i.created_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n         COUNT(*) as added\n  FROM project_items pi\n  JOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\n  WHERE i.repo IN (${repo:singlequote})\n    AND CAST(strftime('%s', i.created_at) as INTEGER) >= $__from / 1000\n    AND CAST(strftime('%s', i.created_at) as INTEGER) <= $__to / 1000\n  GROUP BY date(i.created_at, 'weekday 0', '-6 days')\n) a\nLEFT JOIN (\n  SELECT CAST(strftime('%s', date(pi.triaged_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n         COUNT(*) as triaged\n  FROM project_items pi\n  JOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\n  WHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n    AND i.repo IN (${repo:singlequote})\n    AND CAST(strftime('%s', pi.triaged_at) as INTEGER) >= $__from / 1000\n    AND CAST(strftime('%s', pi.triaged_at) as INTEGER) <= $__to / 1000\n  GROUP BY date(pi.triaged_at, 'weekday 0', '-6 days')\n) t ON a.time = t.time\nORDER BY a.time ASC",
+          "refId": "C",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
         }
       ]
     },
     {
+      "id": 333,
+      "type": "timeseries",
+      "title": "Issues Added to Project by Repo (Weekly)",
+      "description": "Weekly issues added to project, broken down by repository.",
       "datasource": {
         "type": "frser-sqlite-datasource",
         "uid": "P2289B60D79A89B0C"
       },
-      "description": "Weekly issues opened per repository, stacked.",
+      "pluginVersion": "12.3.1",
+      "gridPos": {
+        "x": 0,
+        "y": 77,
+        "w": 12,
+        "h": 8
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -11418,17 +9901,17 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 2,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
+            "showPoints": "auto",
             "spanNulls": false,
             "stacking": {
               "group": "A",
-              "mode": "none"
+              "mode": "normal"
             },
             "thresholdsStyle": {
               "mode": "off"
@@ -11449,13 +9932,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python"
+              "options": "sdk-python"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#6C47FF",
                   "mode": "fixed"
                 }
               }
@@ -11464,13 +9947,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (Internal)"
+              "options": "sdk-typescript"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#2196F3",
                   "mode": "fixed"
                 }
               }
@@ -11479,13 +9962,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (External)"
+              "options": "tools"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#FF9800",
                   "mode": "fixed"
                 }
               }
@@ -11494,13 +9977,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (First Response)"
+              "options": "docs"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#4CAF50",
                   "mode": "fixed"
                 }
               }
@@ -11509,13 +9992,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (Resolution Time)"
+              "options": "evals"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#E91E63",
                   "mode": "fixed"
                 }
               }
@@ -11524,13 +10007,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript"
+              "options": "samples"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
+                  "fixedColor": "#00BCD4",
                   "mode": "fixed"
                 }
               }
@@ -11539,13 +10022,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript (Internal)"
+              "options": "mcp-server"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
+                  "fixedColor": "#9C27B0",
                   "mode": "fixed"
                 }
               }
@@ -11554,13 +10037,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript (External)"
+              "options": "agent-builder"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
+                  "fixedColor": "#FF5722",
                   "mode": "fixed"
                 }
               }
@@ -11569,703 +10052,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript (First Response)"
+              "options": "strandsagents.com"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
+                  "fixedColor": "#607D8B",
                   "mode": "fixed"
                 }
               }
@@ -12273,13 +10066,6 @@
           }
         ]
       },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 64
-      },
-      "id": 316,
       "options": {
         "legend": {
           "calcs": [],
@@ -12293,9 +10079,9 @@
       },
       "targets": [
         {
-          "queryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(issues_opened) as value\nFROM daily_metrics \nWHERE repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "queryText": "SELECT \n  CAST(strftime('%s', date(i.created_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  pi.repo as metric,\n  COUNT(*) as value\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n  AND CAST(strftime('%s', i.created_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', i.created_at) as INTEGER) <= $__to / 1000\nGROUP BY date(i.created_at, 'weekday 0', '-6 days'), pi.repo\nORDER BY time ASC",
           "queryType": "table",
-          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(issues_opened) as value\nFROM daily_metrics \nWHERE repo IN (${repo:singlequote}) \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(i.created_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  pi.repo as metric,\n  COUNT(*) as value\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE i.repo IN (${repo:singlequote})\n  AND CAST(strftime('%s', i.created_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', i.created_at) as INTEGER) <= $__to / 1000\nGROUP BY date(i.created_at, 'weekday 0', '-6 days'), pi.repo\nORDER BY time ASC",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -12303,8 +10089,6 @@
           ]
         }
       ],
-      "title": "Issues Opened by Repo (Weekly)",
-      "type": "timeseries",
       "transformations": [
         {
           "id": "prepareTimeSeries",
@@ -12315,11 +10099,21 @@
       ]
     },
     {
+      "id": 334,
+      "type": "timeseries",
+      "title": "Issues Triaged by Repo (Weekly)",
+      "description": "Weekly issues triaged (priority assigned), broken down by repository.",
       "datasource": {
         "type": "frser-sqlite-datasource",
         "uid": "P2289B60D79A89B0C"
       },
-      "description": "Weekly issues closed per repository, stacked.",
+      "pluginVersion": "12.3.1",
+      "gridPos": {
+        "x": 12,
+        "y": 77,
+        "w": 12,
+        "h": 8
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -12342,17 +10136,17 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 2,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
+            "showPoints": "auto",
             "spanNulls": false,
             "stacking": {
               "group": "A",
-              "mode": "none"
+              "mode": "normal"
             },
             "thresholdsStyle": {
               "mode": "off"
@@ -12373,13 +10167,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python"
+              "options": "sdk-python"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#6C47FF",
                   "mode": "fixed"
                 }
               }
@@ -12388,13 +10182,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (Internal)"
+              "options": "sdk-typescript"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#2196F3",
                   "mode": "fixed"
                 }
               }
@@ -12403,13 +10197,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (External)"
+              "options": "tools"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#FF9800",
                   "mode": "fixed"
                 }
               }
@@ -12418,13 +10212,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (First Response)"
+              "options": "docs"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#4CAF50",
                   "mode": "fixed"
                 }
               }
@@ -12433,13 +10227,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-python (Resolution Time)"
+              "options": "evals"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "blue",
+                  "fixedColor": "#E91E63",
                   "mode": "fixed"
                 }
               }
@@ -12448,13 +10242,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript"
+              "options": "samples"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
+                  "fixedColor": "#00BCD4",
                   "mode": "fixed"
                 }
               }
@@ -12463,13 +10257,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript (Internal)"
+              "options": "mcp-server"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
+                  "fixedColor": "#9C27B0",
                   "mode": "fixed"
                 }
               }
@@ -12478,13 +10272,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript (External)"
+              "options": "agent-builder"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
+                  "fixedColor": "#FF5722",
                   "mode": "fixed"
                 }
               }
@@ -12493,703 +10287,13 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value sdk-typescript (First Response)"
+              "options": "strandsagents.com"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value sdk-typescript (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value tools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "yellow",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value docs (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-builder (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value agent-sop (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-red",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value samples (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "purple",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value mcp-server (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-orange",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value evals (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "dark-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value .github (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#808080",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Internal)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (External)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (First Response)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "value devtools (Resolution Time)"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "light-green",
+                  "fixedColor": "#607D8B",
                   "mode": "fixed"
                 }
               }
@@ -13197,13 +10301,6 @@
           }
         ]
       },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 72
-      },
-      "id": 317,
       "options": {
         "legend": {
           "calcs": [],
@@ -13217,9 +10314,9 @@
       },
       "targets": [
         {
-          "queryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(issues_closed) as value\nFROM daily_metrics \nWHERE repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "queryText": "SELECT \n  CAST(strftime('%s', date(pi.triaged_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  pi.repo as metric,\n  COUNT(*) as value\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n  AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) <= $__to / 1000\nGROUP BY date(pi.triaged_at, 'weekday 0', '-6 days'), pi.repo\nORDER BY time ASC",
           "queryType": "table",
-          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(date, 'weekday 0', '-6 days')) as INTEGER) as time,\n  repo as metric,\n  SUM(issues_closed) as value\nFROM daily_metrics \nWHERE repo IN (${repo:singlequote}) \n  AND CAST(strftime('%s', date) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', date) as INTEGER) <= $__to / 1000\nGROUP BY date(date, 'weekday 0', '-6 days'), repo\nORDER BY time ASC",
+          "rawQueryText": "SELECT \n  CAST(strftime('%s', date(pi.triaged_at, 'weekday 0', '-6 days')) as INTEGER) as time,\n  pi.repo as metric,\n  COUNT(*) as value\nFROM project_items pi\nJOIN issues i ON pi.repo = i.repo AND pi.issue_number = i.number\nWHERE pi.triaged_at IS NOT NULL AND pi.priority IS NOT NULL\n  AND i.repo IN (${repo:singlequote})\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) >= $__from / 1000\n  AND CAST(strftime('%s', pi.triaged_at) as INTEGER) <= $__to / 1000\nGROUP BY date(pi.triaged_at, 'weekday 0', '-6 days'), pi.repo\nORDER BY time ASC",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -13227,8 +10324,6 @@
           ]
         }
       ],
-      "title": "Issues Closed by Repo (Weekly)",
-      "type": "timeseries",
       "transformations": [
         {
           "id": "prepareTimeSeries",

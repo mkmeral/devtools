@@ -131,7 +131,8 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
             issue_number INTEGER NOT NULL,
             priority TEXT,
             status TEXT,
-            updated_at TEXT NOT NULL
+            updated_at TEXT NOT NULL,
+            triaged_at TEXT
         )",
         [],
     )?;
@@ -201,6 +202,7 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
     // ── Migrations for existing databases ──────────────────────────────
     let _ = conn.execute("ALTER TABLE daily_metrics ADD COLUMN weekly_community_contributors INTEGER DEFAULT 0", []);
     let _ = conn.execute("ALTER TABLE daily_metrics ADD COLUMN cumulative_community_contributors INTEGER DEFAULT 0", []);
+    let _ = conn.execute("ALTER TABLE project_items ADD COLUMN triaged_at TEXT", []);
 
     Ok(conn)
 }

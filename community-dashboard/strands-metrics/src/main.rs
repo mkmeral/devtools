@@ -66,6 +66,8 @@ enum Commands {
         #[clap(long, default_value = "../packages.yaml")]
         config_path: PathBuf,
     },
+    /// Backfill triaged_at timestamps from issue timeline events.
+    BackfillTriage,
 }
 
 /// Create a spinner progress bar with consistent styling
@@ -235,6 +237,18 @@ async fn main() -> Result<()> {
             }
 
             println!("\nBackfill complete!");
+        }
+        Commands::BackfillTriage => {
+            let gh_token = std::env::var("GITHUB_TOKEN").expect("GITHUB_TOKEN must be set");
+            let octocrab = OctocrabBuilder::new().personal_token(gh_token).build()?;
+
+            let m = Arc::new(MultiProgress::new());
+            let pb = create_spinner(&m, "Backfilling triage timestamps...");
+
+            let client = GitHubClient::new(octocrab, &mut conn, pb.clone());
+            client.backfill_triage_timestamps(ORG).await?;
+
+            pb.finish_with_message("Triage backfill complete.");
         }
     }
 

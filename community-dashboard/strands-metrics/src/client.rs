@@ -7,6 +7,7 @@ use octocrab::{models, Octocrab, OctocrabBuilder};
 use rusqlite::{params, Connection};
 use serde::Deserialize;
 use serde_json::Value;
+use std::collections::HashMap;
 use std::collections::HashSet;
 
 #[derive(Deserialize, Debug)]
@@ -33,29 +34,101 @@ impl<'a> GitHubClient<'a> {
 
     pub async fn check_limits(&self) -> Result<()> {
         let rate = self.gh.ratelimit().get().await?;
-        let core = rate.resources.core;
 
+        // Check REST API rate limit
+        let core = rate.resources.core;
         if core.remaining < 50 {
             let reset = core.reset;
             let now = Utc::now().timestamp() as u64;
             let wait_secs = reset.saturating_sub(now) + 10;
             self.pb
-                .set_message(format!("Rate limit low. Sleeping {}s...", wait_secs));
+                .set_message(format!("REST rate limit low. Sleeping {}s...", wait_secs));
             tokio::time::sleep(tokio::time::Duration::from_secs(wait_secs)).await;
         }
+
+        // Check GraphQL rate limit
+        if let Some(graphql) = rate.resources.graphql {
+            if graphql.remaining < 50 {
+                let reset = graphql.reset;
+                let now = Utc::now().timestamp() as u64;
+                let wait_secs = reset.saturating_sub(now) + 10;
+                self.pb
+                    .set_message(format!("GraphQL rate limit low. Sleeping {}s...", wait_secs));
+                tokio::time::sleep(tokio::time::Duration::from_secs(wait_secs)).await;
+            }
+        }
+
         Ok(())
+    }
+
+    /// Execute a GraphQL query with retry + exponential backoff on errors.
+    async fn graphql_with_retry(&self, query: &str, max_retries: u32) -> Result<Value> {
+        let mut attempt = 0;
+        loop {
+            self.check_limits().await?;
+            let result: std::result::Result<Value, octocrab::Error> = self
+                .gh
+                .graphql(&serde_json::json!({ "query": query }))
+                .await;
+
+            match result {
+                Ok(response) => {
+                    // Check for rate limit errors in the GraphQL response
+                    if let Some(errors) = response.get("errors") {
+                        let err_str = errors.to_string();
+                        if (err_str.contains("rate limit") || err_str.contains("abuse"))
+                            && attempt < max_retries
+                        {
+                            let wait = 2u64.pow(attempt) * 10;
+                            self.pb.set_message(format!(
+                                "GraphQL rate limited, retrying in {}s...", wait
+                            ));
+                            tokio::time::sleep(tokio::time::Duration::from_secs(wait)).await;
+                            attempt += 1;
+                            continue;
+                        }
+                    }
+                    return Ok(response);
+                }
+                Err(e) => {
+                    if attempt < max_retries {
+                        let wait = 2u64.pow(attempt) * 5;
+                        self.pb.set_message(format!(
+                            "GraphQL error (attempt {}/{}), retrying in {}s: {}",
+                            attempt + 1, max_retries, wait, e
+                        ));
+                        tokio::time::sleep(tokio::time::Duration::from_secs(wait)).await;
+                        attempt += 1;
+                    } else {
+                        return Err(e.into());
+                    }
+                }
+            }
+        }
     }
 
     pub async fn sync_org(&mut self, org: &str) -> Result<()> {
         self.check_limits().await?;
         let repos = self.fetch_repos(org).await?;
+        let mut failures: Vec<String> = Vec::new();
         for repo in repos {
             self.pb.set_message(format!("Syncing {}", repo.name));
-            self.sync_repo(org, &repo).await?;
+            if let Err(e) = self.sync_repo(org, &repo).await {
+                tracing::error!("Failed to sync {}: {}", repo.name, e);
+                self.pb.set_message(format!("WARN: {} sync failed, continuing...", repo.name));
+                failures.push(repo.name.clone());
+            }
         }
 
         // Sync GitHub Project V2 items (project #4 = Strands Agents board)
-        self.sync_project_items(org, 4).await?;
+        if let Err(e) = self.sync_project_items(org, 4).await {
+            tracing::error!("Failed to sync project items: {}", e);
+            failures.push("project_items".to_string());
+        }
+
+        if !failures.is_empty() {
+            tracing::warn!("Sync completed with failures: {:?}", failures);
+        }
 
         Ok(())
     }
@@ -725,10 +798,40 @@ impl<'a> GitHubClient<'a> {
     pub async fn sync_project_items(&self, org: &str, project_number: i32) -> Result<()> {
         self.pb.set_message(format!("Syncing project #{} items...", project_number));
 
-        // Clear existing project items and re-sync fully each time.
-        // Project items don't have a reliable "updated since" filter via GraphQL.
+        // Snapshot existing priorities so we can detect NULL → non-NULL transitions
+        let mut old_priorities: HashMap<String, Option<String>> = HashMap::new();
+        {
+            let mut stmt = self.db.prepare(
+                "SELECT node_id, priority FROM project_items"
+            )?;
+            let rows = stmt.query_map([], |row| {
+                Ok((row.get::<_, String>(0)?, row.get::<_, Option<String>>(1)?))
+            })?;
+            for row in rows {
+                let (nid, pri) = row?;
+                old_priorities.insert(nid, pri);
+            }
+        }
+
+        // Snapshot existing triaged_at values to preserve them
+        let mut old_triaged: HashMap<String, Option<String>> = HashMap::new();
+        {
+            let mut stmt = self.db.prepare(
+                "SELECT node_id, triaged_at FROM project_items"
+            )?;
+            let rows = stmt.query_map([], |row| {
+                Ok((row.get::<_, String>(0)?, row.get::<_, Option<String>>(1)?))
+            })?;
+            for row in rows {
+                let (nid, ta) = row?;
+                old_triaged.insert(nid, ta);
+            }
+        }
+
+        // Clear and re-sync fully
         self.db.execute("DELETE FROM project_items", [])?;
 
+        let now = Utc::now().to_rfc3339();
         let mut cursor: Option<String> = None;
         let mut total = 0u64;
 
@@ -777,8 +880,7 @@ impl<'a> GitHubClient<'a> {
             );
 
             let response: Value = self
-                .gh
-                .graphql(&serde_json::json!({ "query": query }))
+                .graphql_with_retry(&query, 3)
                 .await?;
 
             // Check for GraphQL errors
@@ -842,10 +944,26 @@ impl<'a> GitHubClient<'a> {
                 let priority = node.pointer("/priority/name").and_then(|v| v.as_str());
                 let status = node.pointer("/status/name").and_then(|v| v.as_str());
 
+                // Determine triaged_at:
+                // 1. If we already had a triaged_at, preserve it
+                // 2. If priority was NULL before and is now non-NULL, set triaged_at = now
+                // 3. Otherwise leave NULL
+                let triaged_at = if let Some(existing) = old_triaged.get(node_id).and_then(|t| t.as_deref()) {
+                    Some(existing.to_string())
+                } else if priority.is_some() {
+                    let was_null = old_priorities
+                        .get(node_id)
+                        .map(|p| p.is_none())
+                        .unwrap_or(true); // new item with priority = treat as newly triaged
+                    if was_null { Some(now.clone()) } else { None }
+                } else {
+                    None
+                };
+
                 self.db.execute(
-                    "INSERT OR REPLACE INTO project_items (node_id, repo, issue_number, priority, status, updated_at)
-                     VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
-                    params![node_id, repo, issue_number, priority, status, updated_at],
+                    "INSERT OR REPLACE INTO project_items (node_id, repo, issue_number, priority, status, updated_at, triaged_at)
+                     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)",
+                    params![node_id, repo, issue_number, priority, status, updated_at, triaged_at],
                 )?;
                 total += 1;
             }
@@ -869,6 +987,157 @@ impl<'a> GitHubClient<'a> {
         self.pb
             .set_message(format!("Synced {} project items", total));
         Ok(())
+    }
+
+    /// Backfill triaged_at timestamps by checking issue timeline events.
+    /// For each project item that has a priority but no triaged_at, fetches the
+    /// issue timeline to find when the priority field was first set.
+    pub async fn backfill_triage_timestamps(&self, org: &str) -> Result<()> {
+        // Find items that have priority set but no triaged_at
+        let items: Vec<(String, String, i64)> = {
+            let mut stmt = self.db.prepare(
+                "SELECT node_id, repo, issue_number FROM project_items
+                 WHERE priority IS NOT NULL AND triaged_at IS NULL"
+            )?;
+            let result = stmt.query_map([], |row| {
+                Ok((
+                    row.get::<_, String>(0)?,
+                    row.get::<_, String>(1)?,
+                    row.get::<_, i64>(2)?,
+                ))
+            })?
+            .collect::<Result<Vec<_>, _>>()?;
+            result
+        };
+
+        let total = items.len();
+        self.pb.set_message(format!("Backfilling triage timestamps for {} items...", total));
+
+        for (i, (node_id, repo, issue_number)) in items.iter().enumerate() {
+            if i % 10 == 0 {
+                self.pb.set_message(format!(
+                    "Backfilling triage timestamps... {}/{}", i, total
+                ));
+            }
+
+            self.check_limits().await?;
+
+            // Fetch issue timeline events looking for project field changes
+            let triaged_at = self
+                .find_triage_timestamp(org, repo, *issue_number as u64)
+                .await?;
+
+            if let Some(ts) = triaged_at {
+                self.db.execute(
+                    "UPDATE project_items SET triaged_at = ?1 WHERE node_id = ?2",
+                    params![ts, node_id],
+                )?;
+            } else {
+                // Fallback: use the issue's created_at as a rough approximation
+                // (better than nothing for historical data)
+                let created_at: Option<String> = self.db.query_row(
+                    "SELECT created_at FROM issues WHERE repo = ?1 AND number = ?2",
+                    params![repo, issue_number],
+                    |row| row.get(0),
+                ).ok();
+                if let Some(ca) = created_at {
+                    self.db.execute(
+                        "UPDATE project_items SET triaged_at = ?1 WHERE node_id = ?2",
+                        params![ca, node_id],
+                    )?;
+                }
+            }
+        }
+
+        self.pb.set_message(format!("Backfilled triage timestamps for {} items", total));
+        Ok(())
+    }
+
+    /// Look through issue timeline events to find when the issue was triaged.
+    /// Checks for: 1) priority field change, 2) added to project (as proxy for triage).
+    async fn find_triage_timestamp(
+        &self,
+        org: &str,
+        repo: &str,
+        issue_number: u64,
+    ) -> Result<Option<String>> {
+        let mut page = 1u32;
+        let mut added_to_project_at: Option<String> = None;
+
+        loop {
+            self.check_limits().await?;
+
+            let route = format!(
+                "/repos/{}/{}/issues/{}/timeline",
+                org, repo, issue_number
+            );
+
+            let result: Result<Vec<Value>, _> = self
+                .gh
+                .get(
+                    &route,
+                    Some(&serde_json::json!({
+                        "per_page": 100,
+                        "page": page
+                    })),
+                )
+                .await;
+
+            let events = match result {
+                Ok(e) => e,
+                Err(e) => {
+                    if Self::is_missing_resource(&e) {
+                        return Ok(None);
+                    }
+                    tracing::warn!(
+                        "Error fetching timeline for {}/{}#{}: {}",
+                        org, repo, issue_number, e
+                    );
+                    return Ok(None);
+                }
+            };
+
+            if events.is_empty() {
+                break;
+            }
+
+            for event in &events {
+                let event_type = event.get("event").and_then(|v| v.as_str()).unwrap_or("");
+
+                // Best signal: explicit priority field change
+                if event_type == "project_v2_item_field_value_changed" {
+                    let field_name = event
+                        .pointer("/project_v2_item_field_value_change/field_name")
+                        .and_then(|v| v.as_str())
+                        .unwrap_or("");
+
+                    if field_name == "Priority" {
+                        let created_at = event
+                            .get("created_at")
+                            .and_then(|v| v.as_str())
+                            .unwrap_or("");
+                        if !created_at.is_empty() {
+                            return Ok(Some(created_at.to_string()));
+                        }
+                    }
+                }
+
+                // Fallback signal: when the issue was added to the project board
+                if event_type == "added_to_project_v2" && added_to_project_at.is_none() {
+                    if let Some(ts) = event.get("created_at").and_then(|v| v.as_str()) {
+                        added_to_project_at = Some(ts.to_string());
+                    }
+                }
+            }
+
+            if events.len() < 100 {
+                break;
+            }
+            page += 1;
+        }
+
+        // Return added_to_project timestamp as proxy for triage time
+        Ok(added_to_project_at)
     }
 
     fn is_missing_resource(err: &octocrab::Error) -> bool {
