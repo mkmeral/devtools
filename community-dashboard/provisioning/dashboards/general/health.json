@@ -545,12 +545,694 @@
       "type": "row"
     },
     {
+      "id": 318,
+      "type": "row",
+      "title": "Triage",
+      "gridPos": {
+        "x": 0,
+        "y": 58,
+        "h": 1,
+        "w": 24
+      },
+      "collapsed": false,
+      "panels": []
+    },
+    {
+      "id": 319,
+      "type": "stat",
+      "title": "Untriaged Issues",
+      "description": "Open issues in project with no priority set.",
+      "gridPos": {
+        "x": 0,
+        "y": 59,
+        "h": 4,
+        "w": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "yellow"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IS NULL AND pi.status != 'Done' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')",
+          "queryType": "table",
+          "rawQueryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IS NULL AND pi.status != 'Done' AND i.repo IN (${repo:singlequote})",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 320,
+      "type": "stat",
+      "title": "Sev2 Open",
+      "description": "Open issues with Sev2 priority.",
+      "gridPos": {
+        "x": 6,
+        "y": 59,
+        "h": 4,
+        "w": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "red"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority = 'Sev2' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')",
+          "queryType": "table",
+          "rawQueryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority = 'Sev2' AND i.repo IN (${repo:singlequote})",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 321,
+      "type": "stat",
+      "title": "On-Call Open",
+      "description": "Open issues with On-Call priority.",
+      "gridPos": {
+        "x": 12,
+        "y": 59,
+        "h": 4,
+        "w": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "orange"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority = 'On-Call' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')",
+          "queryType": "table",
+          "rawQueryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority = 'On-Call' AND i.repo IN (${repo:singlequote})",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 322,
+      "type": "stat",
+      "title": "High Open",
+      "description": "Open issues with High priority.",
+      "gridPos": {
+        "x": 18,
+        "y": 59,
+        "h": 4,
+        "w": 6
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "super-light-orange"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority = 'High' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging')",
+          "queryType": "table",
+          "rawQueryText": "SELECT COUNT(*) as value FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority = 'High' AND i.repo IN (${repo:singlequote})",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 323,
+      "type": "bargauge",
+      "title": "Untriaged Issues by Repo",
+      "description": "Open issues with no priority, broken down by repository.",
+      "gridPos": {
+        "x": 0,
+        "y": 63,
+        "h": 6,
+        "w": 12
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": true,
+          "calcs": [],
+          "fields": ""
+        },
+        "orientation": "horizontal",
+        "displayMode": "gradient",
+        "showUnfilled": true,
+        "valueMode": "color",
+        "sizing": "auto",
+        "minVizWidth": 8,
+        "minVizHeight": 16,
+        "maxVizHeight": 300,
+        "namePlacement": "auto",
+        "legend": {
+          "showLegend": false,
+          "displayMode": "hidden",
+          "placement": "bottom"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT i.repo, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IS NULL AND pi.status != 'Done' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') GROUP BY i.repo ORDER BY count DESC",
+          "queryType": "table",
+          "rawQueryText": "SELECT i.repo, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IS NULL AND pi.status != 'Done' AND i.repo IN (${repo:singlequote}) GROUP BY i.repo ORDER BY count DESC",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 324,
+      "type": "bargauge",
+      "title": "Priority Issues by Repo",
+      "description": "Open Sev2/On-Call/High issues broken down by repository.",
+      "gridPos": {
+        "x": 12,
+        "y": 63,
+        "h": 6,
+        "w": 12
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": true,
+          "calcs": [],
+          "fields": ""
+        },
+        "orientation": "horizontal",
+        "displayMode": "gradient",
+        "showUnfilled": true,
+        "valueMode": "color",
+        "sizing": "auto",
+        "minVizWidth": 8,
+        "minVizHeight": 16,
+        "maxVizHeight": 300,
+        "namePlacement": "auto",
+        "legend": {
+          "showLegend": false,
+          "displayMode": "hidden",
+          "placement": "bottom"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT i.repo || ' (' || pi.priority || ')' as metric, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IN ('Sev2', 'On-Call', 'High') AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') GROUP BY i.repo, pi.priority ORDER BY count DESC",
+          "queryType": "table",
+          "rawQueryText": "SELECT i.repo || ' (' || pi.priority || ')' as metric, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IN ('Sev2', 'On-Call', 'High') AND i.repo IN (${repo:singlequote}) GROUP BY i.repo, pi.priority ORDER BY count DESC",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 325,
+      "type": "row",
+      "title": "Responsiveness",
+      "gridPos": {
+        "x": 0,
+        "y": 69,
+        "h": 1,
+        "w": 24
+      },
+      "collapsed": false,
+      "panels": []
+    },
+    {
+      "id": 326,
+      "type": "stat",
+      "title": "Issues Awaiting Response",
+      "description": "Open issues from non-maintainers where the last comment is not from a team member.",
+      "gridPos": {
+        "x": 0,
+        "y": 70,
+        "h": 4,
+        "w": 12
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "yellow"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT COUNT(DISTINCT i.id) as value FROM issues i WHERE i.state = 'open' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') AND i.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]') AND NOT EXISTS (  SELECT 1 FROM issue_comments ic   WHERE ic.repo = i.repo AND ic.issue_number = i.number   AND ic.author IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')   AND ic.created_at > COALESCE(    (SELECT MAX(ic2.created_at) FROM issue_comments ic2      WHERE ic2.repo = i.repo AND ic2.issue_number = i.number      AND ic2.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')), i.created_at))",
+          "queryType": "table",
+          "rawQueryText": "SELECT COUNT(DISTINCT i.id) as value FROM issues i WHERE i.state = 'open' AND i.repo IN (${repo:singlequote}) AND i.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]') AND NOT EXISTS (  SELECT 1 FROM issue_comments ic   WHERE ic.repo = i.repo AND ic.issue_number = i.number   AND ic.author IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')   AND ic.created_at > COALESCE(    (SELECT MAX(ic2.created_at) FROM issue_comments ic2      WHERE ic2.repo = i.repo AND ic2.issue_number = i.number      AND ic2.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')), i.created_at))",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 327,
+      "type": "stat",
+      "title": "PRs Without Reviews",
+      "description": "Open PRs that have received zero reviews.",
+      "gridPos": {
+        "x": 12,
+        "y": 70,
+        "h": 4,
+        "w": 12
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "yellow"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "wideLayout": true,
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "showPercentChange": false
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT COUNT(*) as value FROM pull_requests p WHERE p.state = 'open' AND p.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') AND NOT EXISTS (  SELECT 1 FROM pr_reviews r WHERE r.repo = p.repo AND r.pr_number = p.number)",
+          "queryType": "table",
+          "rawQueryText": "SELECT COUNT(*) as value FROM pull_requests p WHERE p.state = 'open' AND p.repo IN (${repo:singlequote}) AND NOT EXISTS (  SELECT 1 FROM pr_reviews r WHERE r.repo = p.repo AND r.pr_number = p.number)",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 328,
+      "type": "bargauge",
+      "title": "Issues Awaiting Response by Repo",
+      "description": "Open issues awaiting maintainer response, by repository.",
+      "gridPos": {
+        "x": 0,
+        "y": 74,
+        "h": 6,
+        "w": 12
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": true,
+          "calcs": [],
+          "fields": ""
+        },
+        "orientation": "horizontal",
+        "displayMode": "gradient",
+        "showUnfilled": true,
+        "valueMode": "color",
+        "sizing": "auto",
+        "minVizWidth": 8,
+        "minVizHeight": 16,
+        "maxVizHeight": 300,
+        "namePlacement": "auto",
+        "legend": {
+          "showLegend": false,
+          "displayMode": "hidden",
+          "placement": "bottom"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT i.repo, COUNT(DISTINCT i.id) as count FROM issues i WHERE i.state = 'open' AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') AND i.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]') AND NOT EXISTS (  SELECT 1 FROM issue_comments ic   WHERE ic.repo = i.repo AND ic.issue_number = i.number   AND ic.author IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')   AND ic.created_at > COALESCE(    (SELECT MAX(ic2.created_at) FROM issue_comments ic2      WHERE ic2.repo = i.repo AND ic2.issue_number = i.number      AND ic2.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')), i.created_at)) GROUP BY i.repo ORDER BY count DESC",
+          "queryType": "table",
+          "rawQueryText": "SELECT i.repo, COUNT(DISTINCT i.id) as count FROM issues i WHERE i.state = 'open' AND i.repo IN (${repo:singlequote}) AND i.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]') AND NOT EXISTS (  SELECT 1 FROM issue_comments ic   WHERE ic.repo = i.repo AND ic.issue_number = i.number   AND ic.author IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')   AND ic.created_at > COALESCE(    (SELECT MAX(ic2.created_at) FROM issue_comments ic2      WHERE ic2.repo = i.repo AND ic2.issue_number = i.number      AND ic2.author NOT IN ('afarntrog','lizradway','JackYPCOnline','chaynabors','dbschmigelski','zastrowm','mehtarac','mkmeral','Unshure','pgrayy','poshinchen','strands-agent','dependabot[bot]','github-actions[bot]')), i.created_at)) GROUP BY i.repo ORDER BY count DESC",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
+      "id": 329,
+      "type": "bargauge",
+      "title": "PRs Without Reviews by Repo",
+      "description": "Open PRs with no reviews, by repository.",
+      "gridPos": {
+        "x": 12,
+        "y": 74,
+        "h": 6,
+        "w": 12
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": true,
+          "calcs": [],
+          "fields": ""
+        },
+        "orientation": "horizontal",
+        "displayMode": "gradient",
+        "showUnfilled": true,
+        "valueMode": "color",
+        "sizing": "auto",
+        "minVizWidth": 8,
+        "minVizHeight": 16,
+        "maxVizHeight": 300,
+        "namePlacement": "auto",
+        "legend": {
+          "showLegend": false,
+          "displayMode": "hidden",
+          "placement": "bottom"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "queryText": "SELECT p.repo, COUNT(*) as count FROM pull_requests p WHERE p.state = 'open' AND p.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') AND NOT EXISTS (  SELECT 1 FROM pr_reviews r WHERE r.repo = p.repo AND r.pr_number = p.number) GROUP BY p.repo ORDER BY count DESC",
+          "queryType": "table",
+          "rawQueryText": "SELECT p.repo, COUNT(*) as count FROM pull_requests p WHERE p.state = 'open' AND p.repo IN (${repo:singlequote}) AND NOT EXISTS (  SELECT 1 FROM pr_reviews r WHERE r.repo = p.repo AND r.pr_number = p.number) GROUP BY p.repo ORDER BY count DESC",
+          "refId": "A",
+          "timeColumns": [
+            "time",
+            "ts"
+          ]
+        }
+      ],
+      "datasource": {
+        "type": "frser-sqlite-datasource",
+        "uid": "P2289B60D79A89B0C"
+      }
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 80
       },
       "id": 101,
       "panels": [],
@@ -563,7 +1245,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 75
+        "y": 97
       },
       "id": 102,
       "panels": [],
@@ -576,7 +1258,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 92
+        "y": 114
       },
       "id": 103,
       "panels": [],
@@ -1475,7 +2157,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 93
+        "y": 115
       },
       "id": 12,
       "options": {
@@ -2407,7 +3089,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 93
+        "y": 115
       },
       "id": 10,
       "options": {
@@ -2677,7 +3359,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 101
+        "y": 123
       },
       "id": 18,
       "options": {
@@ -3623,7 +4305,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 101
+        "y": 123
       },
       "id": 9,
       "options": {
@@ -3891,7 +4573,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 67
+        "y": 89
       },
       "id": 19,
       "options": {
@@ -4175,7 +4857,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 76
+        "y": 98
       },
       "id": 13,
       "options": {
@@ -4470,7 +5152,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 84
+        "y": 106
       },
       "id": 14,
       "options": {
@@ -4746,7 +5428,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 76
+        "y": 98
       },
       "id": 15,
       "options": {
@@ -5041,7 +5723,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 84
+        "y": 106
       },
       "id": 16,
       "options": {
@@ -5976,7 +6658,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 67
+        "y": 89
       },
       "id": 7,
       "options": {
@@ -6446,7 +7128,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 59
+        "y": 81
       },
       "id": 17,
       "options": {
@@ -6914,7 +7596,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 59
+        "y": 81
       },
       "id": 20,
       "options": {
@@ -6987,7 +7669,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 109
+        "y": 131
       },
       "id": 104,
       "panels": [],
@@ -7086,7 +7768,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 110
+        "y": 132
       },
       "id": 21,
       "options": {
@@ -7199,7 +7881,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 110
+        "y": 132
       },
       "id": 22,
       "options": {
@@ -7337,7 +8019,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 118
+        "y": 140
       },
       "id": 23,
       "options": {
@@ -7422,7 +8104,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 118
+        "y": 140
       },
       "id": 24,
       "options": {
@@ -7524,7 +8206,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 128
+        "y": 150
       },
       "id": 25,
       "options": {
@@ -7571,7 +8253,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 28
       },
       "id": 300,
       "panels": [],
@@ -7607,7 +8289,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 7
+        "y": 29
       },
       "id": 301,
       "options": {
@@ -7665,7 +8347,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 7
+        "y": 29
       },
       "id": 302,
       "options": {
@@ -7723,7 +8405,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 7
+        "y": 29
       },
       "id": 303,
       "options": {
@@ -7781,7 +8463,7 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 7
+        "y": 29
       },
       "id": 304,
       "options": {
@@ -7868,7 +8550,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 11
+        "y": 33
       },
       "id": 305,
       "options": {
@@ -7966,7 +8648,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 11
+        "y": 33
       },
       "id": 306,
       "options": {
@@ -8063,7 +8745,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 19
+        "y": 41
       },
       "id": 307,
       "options": {
@@ -8164,7 +8846,7 @@
         "h": 8,
         "w": 10,
         "x": 6,
-        "y": 19
+        "y": 41
       },
       "id": 308,
       "options": {
@@ -8257,7 +8939,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 19
+        "y": 41
       },
       "id": 309,
       "options": {
@@ -8325,7 +9007,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 28
+        "y": 50
       },
       "id": 310,
       "options": {
@@ -8389,7 +9071,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 28
+        "y": 50
       },
       "id": 311,
       "options": {
@@ -8605,7 +9287,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 56
       },
       "id": 312,
       "options": {
@@ -8801,7 +9483,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 56
       },
       "id": 313,
       "options": {
@@ -9737,7 +10419,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 64
       },
       "id": 314,
       "options": {
@@ -10661,7 +11343,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 72
       },
       "id": 315,
       "options": {
@@ -11595,7 +12277,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 64
       },
       "id": 316,
       "options": {
@@ -12519,7 +13201,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 72
       },
       "id": 317,
       "options": {

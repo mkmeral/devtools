@@ -53,6 +53,10 @@ impl<'a> GitHubClient<'a> {
             self.pb.set_message(format!("Syncing {}", repo.name));
             self.sync_repo(org, &repo).await?;
         }
+
+        // Sync GitHub Project V2 items (project #4 = Strands Agents board)
+        self.sync_project_items(org, 4).await?;
+
         Ok(())
     }
 
@@ -713,6 +717,157 @@ impl<'a> GitHubClient<'a> {
                 break;
             }
         }
+        Ok(())
+    }
+
+    /// Sync GitHub Project V2 items (org-level, not per-repo).
+    /// Fetches priority and status fields from the specified project number.
+    pub async fn sync_project_items(&self, org: &str, project_number: i32) -> Result<()> {
+        self.pb.set_message(format!("Syncing project #{} items...", project_number));
+
+        // Clear existing project items and re-sync fully each time.
+        // Project items don't have a reliable "updated since" filter via GraphQL.
+        self.db.execute("DELETE FROM project_items", [])?;
+
+        let mut cursor: Option<String> = None;
+        let mut total = 0u64;
+
+        loop {
+            self.check_limits().await?;
+
+            let after_clause = cursor
+                .as_ref()
+                .map(|c| format!(r#", after: "{}""#, c))
+                .unwrap_or_default();
+
+            let query = format!(
+                r#"query {{
+  organization(login: "{}") {{
+    projectV2(number: {}) {{
+      items(first: 100{}) {{
+        nodes {{
+          id
+          updatedAt
+          content {{
+            ... on Issue {{
+              number
+              repository {{ name }}
+            }}
+          }}
+          priority: fieldValueByName(name: "Priority") {{
+            ... on ProjectV2ItemFieldSingleSelectValue {{
+              name
+            }}
+          }}
+          status: fieldValueByName(name: "Status") {{
+            ... on ProjectV2ItemFieldSingleSelectValue {{
+              name
+            }}
+          }}
+        }}
+        pageInfo {{
+          hasNextPage
+          endCursor
+        }}
+      }}
+    }}
+  }}
+}}"#,
+                org, project_number, after_clause
+            );
+
+            let response: Value = self
+                .gh
+                .graphql(&serde_json::json!({ "query": query }))
+                .await?;
+
+            // Check for GraphQL errors
+            if let Some(errors) = response.get("errors") {
+                let err_msg = errors.to_string();
+                if err_msg.contains("Could not resolve") || err_msg.contains("insufficient") {
+                    tracing::error!(
+                        "Cannot access project #{} — ensure GITHUB_TOKEN has project read scope. Error: {}",
+                        project_number, err_msg
+                    );
+                    return Ok(());
+                }
+                tracing::warn!("GraphQL errors syncing project items: {}", err_msg);
+            }
+
+            let items = match response.pointer("/data/organization/projectV2/items") {
+                Some(i) => i,
+                None => {
+                    tracing::error!(
+                        "No project data returned for project #{}. Ensure GITHUB_TOKEN has 'read:project' scope. Response: {}",
+                        project_number,
+                        serde_json::to_string_pretty(&response).unwrap_or_default()
+                    );
+                    return Ok(());
+                }
+            };
+
+            let nodes = items
+                .get("nodes")
+                .and_then(|n| n.as_array())
+                .cloned()
+                .unwrap_or_default();
+
+            for node in &nodes {
+                let node_id = node.get("id").and_then(|v| v.as_str()).unwrap_or("");
+                let updated_at = node
+                    .get("updatedAt")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("");
+
+                // content can be null for draft items
+                let content = match node.get("content") {
+                    Some(c) if !c.is_null() => c,
+                    _ => continue,
+                };
+
+                let issue_number = match content.get("number").and_then(|n| n.as_i64()) {
+                    Some(n) => n,
+                    None => continue, // Not an issue (could be a PR or draft)
+                };
+
+                let repo = content
+                    .pointer("/repository/name")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("");
+
+                if repo.is_empty() {
+                    continue;
+                }
+
+                let priority = node.pointer("/priority/name").and_then(|v| v.as_str());
+                let status = node.pointer("/status/name").and_then(|v| v.as_str());
+
+                self.db.execute(
+                    "INSERT OR REPLACE INTO project_items (node_id, repo, issue_number, priority, status, updated_at)
+                     VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
+                    params![node_id, repo, issue_number, priority, status, updated_at],
+                )?;
+                total += 1;
+            }
+
+            let page_info = items.get("pageInfo");
+            let has_next = page_info
+                .and_then(|p| p.get("hasNextPage"))
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+
+            if has_next {
+                cursor = page_info
+                    .and_then(|p| p.get("endCursor"))
+                    .and_then(|v| v.as_str())
+                    .map(String::from);
+            } else {
+                break;
+            }
+        }
+
+        self.pb
+            .set_message(format!("Synced {} project items", total));
         Ok(())
     }
 

@@ -25,7 +25,7 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
             updated_at TEXT NOT NULL,
             merged_at TEXT,
             closed_at TEXT,
-            deleted_at TEXT, 
+            deleted_at TEXT,
             data TEXT NOT NULL
         )",
         [],
@@ -125,6 +125,18 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
     )?;
 
     conn.execute(
+        "CREATE TABLE IF NOT EXISTS project_items (
+            node_id TEXT PRIMARY KEY,
+            repo TEXT NOT NULL,
+            issue_number INTEGER NOT NULL,
+            priority TEXT,
+            status TEXT,
+            updated_at TEXT NOT NULL
+        )",
+        [],
+    )?;
+
+    conn.execute(
         "CREATE TABLE IF NOT EXISTS daily_metrics (
             date TEXT NOT NULL,
             repo TEXT NOT NULL,
@@ -161,35 +173,15 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
         [],
     )?;
 
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_pr_repo_updated ON pull_requests(repo, updated_at)",
-        [],
-    )?;
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_issues_repo_updated ON issues(repo, updated_at)",
-        [],
-    )?;
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_comments_repo_issue ON issue_comments(repo, issue_number)",
-        [],
-    )?;
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_reviews_repo_pr ON pr_reviews(repo, pr_number)",
-        [],
-    )?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_pr_repo_updated ON pull_requests(repo, updated_at)", [])?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_issues_repo_updated ON issues(repo, updated_at)", [])?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_comments_repo_issue ON issue_comments(repo, issue_number)", [])?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_reviews_repo_pr ON pr_reviews(repo, pr_number)", [])?;
     conn.execute("CREATE INDEX IF NOT EXISTS idx_review_comments_repo_pr ON pr_review_comments(repo, pr_number)", [])?;
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_stars_repo_date ON stargazers(repo, starred_at)",
-        [],
-    )?;
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_commits_repo_date ON commits(repo, date)",
-        [],
-    )?;
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_workflows_repo_date ON workflow_runs(repo, created_at)",
-        [],
-    )?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_stars_repo_date ON stargazers(repo, starred_at)", [])?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_commits_repo_date ON commits(repo, date)", [])?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_workflows_repo_date ON workflow_runs(repo, created_at)", [])?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_project_items_repo ON project_items(repo, issue_number)", [])?;
 
     // Package download tracking
     conn.execute(
@@ -204,21 +196,11 @@ pub fn init_db<P: AsRef<Path>>(path: P) -> Result<Connection> {
         [],
     )?;
 
-    conn.execute(
-        "CREATE INDEX IF NOT EXISTS idx_downloads_package_date ON package_downloads(package, date)",
-        [],
-    )?;
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_downloads_package_date ON package_downloads(package, date)", [])?;
 
     // ── Migrations for existing databases ──────────────────────────────
-    // ALTER TABLE is idempotent-safe: we ignore "duplicate column" errors.
-    let _ = conn.execute(
-        "ALTER TABLE daily_metrics ADD COLUMN weekly_community_contributors INTEGER DEFAULT 0",
-        [],
-    );
-    let _ = conn.execute(
-        "ALTER TABLE daily_metrics ADD COLUMN cumulative_community_contributors INTEGER DEFAULT 0",
-        [],
-    );
+    let _ = conn.execute("ALTER TABLE daily_metrics ADD COLUMN weekly_community_contributors INTEGER DEFAULT 0", []);
+    let _ = conn.execute("ALTER TABLE daily_metrics ADD COLUMN cumulative_community_contributors INTEGER DEFAULT 0", []);
 
     Ok(conn)
 }
