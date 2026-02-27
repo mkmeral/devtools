@@ -51,6 +51,9 @@ cargo run --release -- sync-downloads
 # Backfill historical downloads (PyPI ~180d, npm ~365d)
 cargo run --release -- backfill-downloads
 
+# Backfill triage timestamps from GitHub timeline API
+GITHUB_TOKEN=ghp_xxx cargo run --release -- backfill-triage
+
 # Load goal thresholds / team members
 cargo run --release -- load-goals
 cargo run --release -- load-team
@@ -137,7 +140,7 @@ npx tsc --noEmit
 | Module | Responsibility |
 |---|---|
 | `main.rs` | CLI entry point (clap), dispatches subcommands |
-| `client.rs` | GitHub API client via octocrab |
+| `client.rs` | GitHub API client via octocrab, GraphQL with retry/backoff |
 | `db.rs` | SQLite schema init and migrations |
 | `downloads.rs` | PyPI / npm download stat fetching |
 | `goals.rs` | Goal thresholds and team member management |
@@ -172,7 +175,8 @@ runs daily at 06:00 UTC as a de-facto integration test:
 5. `cargo run --release -- load-team`
 6. Commits updated `metrics.db` back to the repo.
 
-Required secret: `METRICS_PAT` (GitHub PAT with org read access).
+Required secret: `METRICS_PAT` (GitHub PAT with org read access
+and `read:project` scope for project items sync).
 
 ## Security & Compliance
 

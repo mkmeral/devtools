@@ -123,6 +123,9 @@ cargo run --release -- load-team
 # Backfill historical downloads (PyPI: ~180 days, npm: ~365 days)
 cargo run --release -- backfill-downloads
 
+# Backfill triage timestamps from GitHub timeline API (one-time)
+GITHUB_TOKEN=ghp_xxx cargo run --release -- backfill-triage
+
 # Run arbitrary SQL queries
 cargo run --release -- query "SELECT repo, SUM(prs_merged) FROM daily_metrics GROUP BY repo"
 ```
@@ -139,6 +142,7 @@ cargo run --release -- query "SELECT repo, SUM(prs_merged) FROM daily_metrics GR
 | `load-team [path]` | Load team members from YAML or `--members alice,bob` (default: `../team.yaml`) |
 | `sync-downloads` | Sync recent package downloads from PyPI and npm (default: 30 days) |
 | `backfill-downloads` | Backfill historical download data (PyPI: ~180 days, npm: ~365 days) |
+| `backfill-triage` | Backfill `triaged_at` timestamps from GitHub timeline API (one-time) |
 
 ### Global flags
 
@@ -151,7 +155,7 @@ cargo run --release -- query "SELECT repo, SUM(prs_merged) FROM daily_metrics GR
 ### General
 
 - **Executive Summary** -- High-level org overview: total stars, open PRs/issues, stale PR count, contributor trends
-- **Health** -- Org health metrics with goal lines: merge time, cycle time, CI failure rate, community PR %, contributor retention, response times
+- **Health** -- Org health metrics with goal lines: merge time, cycle time, CI failure rate, community PR %, contributor retention, response times, triage velocity, and responsiveness tracking
 
 ### SDKs
 
@@ -255,7 +259,7 @@ The included workflow (`.github/workflows/community-dashboard.yaml`) runs daily 
 4. Loads goals and team configuration
 5. Commits the updated `metrics.db` back to the repository
 
-Required secret: `METRICS_PAT` -- a GitHub PAT with read access to the `strands-agents` org.
+Required secret: `METRICS_PAT` -- a GitHub PAT with read access to the `strands-agents` org and `read:project` scope for project items sync.
 
 ## Data Flow
 
