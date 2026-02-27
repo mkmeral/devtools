@@ -112,6 +112,9 @@ export class CommunityDashboardStack extends cdk.Stack {
         logRetention: logs.RetentionDays.TWO_WEEKS,
       }),
       portMappings: [{ containerPort: 3000 }],
+      environment: {
+        RECOMPUTE_METRICS: "true",
+      },
       secrets: {
         GITHUB_TOKEN: ecs.Secret.fromSecretsManager(githubSecret),
       },

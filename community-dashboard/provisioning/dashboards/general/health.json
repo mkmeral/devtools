@@ -537,7 +537,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 49
       },
       "id": 100,
       "panels": [],
@@ -934,9 +934,9 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "queryText": "SELECT i.repo || ' (' || pi.priority || ')' as metric, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IN ('Sev2', 'On-Call', 'High') AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') GROUP BY i.repo, pi.priority ORDER BY count DESC",
+          "queryText": "SELECT i.repo || ' (' || pi.priority || ')' as metric, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IN ('Sev2', 'On-Call', 'High') AND i.repo IN ('agent-builder','agent-sop','docs','evals','mcp-server','private-docs-staging','private-sdk-python-staging','private-sdk-typescript-staging','private-tools-staging','samples','sdk-python','sdk-typescript','strands-action','strandsagents.com','tools','.github','private-samples-staging','private-strands-action-staging') GROUP BY i.repo, pi.priority ORDER BY CASE pi.priority WHEN 'Sev2' THEN 1 WHEN 'On-Call' THEN 2 WHEN 'High' THEN 3 ELSE 4 END, count DESC",
           "queryType": "table",
-          "rawQueryText": "SELECT i.repo || ' (' || pi.priority || ')' as metric, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IN ('Sev2', 'On-Call', 'High') AND i.repo IN (${repo:singlequote}) GROUP BY i.repo, pi.priority ORDER BY count DESC",
+          "rawQueryText": "SELECT i.repo || ' (' || pi.priority || ')' as metric, COUNT(*) as count FROM issues i JOIN project_items pi ON i.repo = pi.repo AND i.number = pi.issue_number WHERE i.state = 'open' AND pi.priority IN ('Sev2', 'On-Call', 'High') AND i.repo IN (${repo:singlequote}) GROUP BY i.repo, pi.priority ORDER BY CASE pi.priority WHEN 'Sev2' THEN 1 WHEN 'On-Call' THEN 2 WHEN 'High' THEN 3 ELSE 4 END, count DESC",
           "refId": "A",
           "timeColumns": [
             "time",

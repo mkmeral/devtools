@@ -57,6 +57,9 @@ if [ "${RECOMPUTE_METRICS:-false}" = "true" ]; then
         echo "[entrypoint] Running sync + full recompute now..."
         strands-metrics --db-path "$DB_PATH" sync || \
             echo "[entrypoint] WARNING: Recompute sync failed (will retry on next cron run)."
+        echo "[entrypoint] Running triage timestamp backfill..."
+        strands-metrics --db-path "$DB_PATH" backfill-triage || \
+            echo "[entrypoint] WARNING: Triage backfill failed (can be run manually later)."
     fi
 fi
 
