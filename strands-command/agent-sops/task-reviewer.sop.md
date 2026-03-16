@@ -104,7 +104,7 @@ Analyze the test coverage and quality of tests.
 
 #### 3.5 Documentation Review
 
-Check documentation completeness, quality, and that a corresponding documentation PR exists.
+Check documentation completeness, quality, and whether a corresponding documentation PR is needed based on the change type identified in step 2.
 
 **Constraints:**
 - You MUST verify documentation exists for all public APIs as required by repository guidelines
@@ -112,12 +112,26 @@ Check documentation completeness, quality, and that a corresponding documentatio
 - You MAY suggest examples for complex APIs
 - You MUST verify that README.md updates are included if needed
 - You MUST check that development documentation is updated if patterns changed
-- You MUST check the PR description for a "Documentation PR" section
+- You MUST use the PR type identified in step 2 to determine documentation requirements:
+
+  **Documentation PR NOT required** (do not block the PR or request justification):
+  - Bug fixes
+  - Small or minor changes
+  - Internal refactors with no public API changes
+  - Test-only changes
+  - CI/config changes
+  - Changes that do not affect user-facing behavior or public APIs
+
+  **Documentation PR expected** (treat as blocking if missing):
+  - New features that introduce user-facing functionality
+  - New public APIs, classes, or abstractions
+  - Significant changes to existing public API behavior or contracts
+  - Changes that affect how users interact with the project
+
+- For PRs where a documentation PR is expected, you MUST check the PR description for a "Documentation PR" section
 - You MUST verify any linked documentation PR points to `https://github.com/strands-agents/docs/pull/...`
-- If no documentation PR is linked, you MUST check for a justification under the "Documentation PR" heading explaining why updates are not required
-- Valid justifications include: internal refactor with no public API changes, test-only changes, CI/config changes
-- If neither a valid documentation PR link nor a justification is present, you MUST treat this as a blocking issue (Request Changes)
-- You MUST post a review comment requesting the author add a "Documentation PR" section with either a link or a justification
+- If a documentation PR is expected but neither a valid link nor a justification is present, you MUST treat this as a blocking issue (Request Changes)
+- You MUST NOT block bug fixes, small changes, or internal refactors for missing documentation PRs — the reviewer should use judgment based on the nature of the change rather than mechanically requiring documentation for every PR
 
 ### 4. Generate Review Comments
 
@@ -177,7 +191,7 @@ Submit the formal pull request review with a verdict and summary using the `subm
 - You MUST use the `submit_pr_review` tool to submit the review
 - You MUST set the `event` parameter to `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`
 - You MUST provide a review summary in the `body` parameter
-- You MUST NOT approve the PR if the Documentation PR Check (step 3.5) has failed
+- You MUST NOT approve the PR if the Documentation PR Check (step 3.5) has failed for PRs where a documentation PR is expected (new features, new public APIs, significant behavior changes). For bug fixes, small changes, internal refactors, test-only changes, and CI/config changes, a missing documentation PR is NOT a blocking issue.
 - You MUST keep the summary concise, informative, and easy to read
 - You MUST NOT repeat information already covered in inline comments
 - You MUST focus on high-level themes and patterns, not individual issues
