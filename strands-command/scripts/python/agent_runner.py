@@ -16,10 +16,10 @@ from strands import Agent
 from strands.telemetry import StrandsTelemetry
 from strands.agent.conversation_manager import SlidingWindowConversationManager
 from strands.session import S3SessionManager
-from strands.models.bedrock import BedrockModel
+from strands.models import BedrockModel, CacheConfig
 from botocore.config import Config
 
-from strands_tools import http_request, shell
+from strands_tools import http_request, shell, use_agent
 
 # Import local GitHub tools we need
 from github_tools import (
@@ -45,8 +45,9 @@ from notebook import notebook
 from str_replace_based_edit_tool import str_replace_based_edit_tool
 
 # Strands configuration constants
-STRANDS_MODEL_ID = "global.anthropic.claude-opus-4-5-20251101-v1:0"
-STRANDS_MAX_TOKENS = 64000
+# Opus 4.6 with adaptive thinking and 1M context window
+STRANDS_MODEL_ID = "global.anthropic.claude-opus-4-6-v1"
+STRANDS_MAX_TOKENS = 128000
 STRANDS_BUDGET_TOKENS = 8000
 STRANDS_REGION = "us-west-2"
 
@@ -178,6 +179,11 @@ def _get_all_tools() -> list[Any]:
         # Agent tools
         notebook,
         handoff_to_user,
+
+        # Sub-agent creation — enables orchestrator pattern
+        # The parent agent can spawn specialized sub-agents for parallel tasks
+        # Each sub-agent runs in-process with its own system prompt and tools
+        use_agent,
     ]
 
 
@@ -191,14 +197,14 @@ def run_agent(query: str):
         # Get tools and create model
         tools = _get_all_tools()
         
-        # Create Bedrock model with inlined configuration
+        # Create Bedrock model — Opus 4.6 with adaptive thinking and 1M context
         additional_request_fields = {}
-        additional_request_fields["anthropic_beta"] = ["interleaved-thinking-2025-05-14"]
-        
         additional_request_fields["thinking"] = {
-            "type": "enabled",
-            "budget_tokens": STRANDS_BUDGET_TOKENS
+            "type": "adaptive",
         }
+        additional_request_fields["anthropic_beta"] = [
+            "context-1m-2025-08-07",
+        ]
         
         model = BedrockModel(
             model_id=STRANDS_MODEL_ID,
@@ -209,6 +215,7 @@ def run_agent(query: str):
                 connect_timeout=900,
                 retries={"max_attempts": 3, "mode": "adaptive"},
             ),
+            cache_config=CacheConfig(strategy="auto"),
             additional_request_fields=additional_request_fields,
             cache_prompt="default",
             cache_tools="default",
